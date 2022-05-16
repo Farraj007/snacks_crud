@@ -1,17 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'home.html' %}
 {% block title %} Snacks List {% endblock %}
-{%block name%}Main Page{%endblock%}
+{% comment %} {%block name%}Main Page{%endblock%} {% endcomment %}
     {% block content %}
+
         <h1>Snacks List :</h1>
         <ul>
             {% if snack_list %}
             {% for snack in snack_list %}
             <br>
-            <li><a href="{% url 'snack_detail' pk=snack.pk %}">{{ snack.name }} - {{snack.purchaser}}</a></li>
+            <li><a href="{% url 'snack_detail' pk=snack.pk %}">{{ snack.title }} - {{snack.purchaser}}</a></li>
             <br>    
             {% endfor %}
             {% else %}
                 <li>No snacks found</li>
             {% endif %}
         </ul>
+        <button class="btn btn-primary" onclick="window.location.href='/create'">Create New</button>
+
     {% endblock content%}

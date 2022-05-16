@@ -1,0 +1,11 @@
+{% extends 'home.html' %}
+{% block title %} Update | {{snack.title}} {% endblock %}
+{% comment %} {%block name%}Details Page{%endblock%} {% endcomment %}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Update">
+</form>
+{% endblock content %}

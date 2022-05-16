@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home{%endblock%}</title>
+  </head>
+  <body>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'snacks/css/style.css' %}" /> 
+    <main>
+      <div class="form-popup" id="myForm">
+      <form action="" class="form-container">
+        <h1>Snack Element</h1>
+        <p> Choose the if of the snack you want to delete </p>
+        <label for="snack.id"><b>Snack Id</b></label>
+        <input type="snack.id" placeholder="Enter Id" name="snack.id" required>
+        <p>
+          <label for="snack.id"><b>{{snack.title}}</b></label>
+        </p>
+        <button type="submit" class="btn" onclick="window.location.href='/delete/{{snack.id}}; closeForm();">Delete</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+    </main>
+  </body>
+</html>

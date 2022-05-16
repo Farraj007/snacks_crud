@@ -1,10 +1,12 @@
-{% extends 'base.html' %}
-{% block title %} Snacks | {{snack.name}} {% endblock %}
-{%block name%}Details Page{%endblock%}
+{% extends 'home.html' %}
+{% block title %} Snacks | {{snack.title}} {% endblock %}
+{% comment %} {%block name%}Details Page{%endblock%} {% endcomment %}
 {% block content %}
 <p>
-    <h3> Snack: {{snack.name}}</h3>
+    <h3> Snack: {{snack.title}}</h3>
     <p> Description: {{snack.description}}</p>
 
 </p>
+<button class="btn btn-primary" onclick="window.location.href='/update/{{snack.id}}'">Update</button>
+<button class="btn btn-secondary" onclick="window.location.href='/delete/{{snack.id}}'">Delete</button>
 {% endblock content %}
