@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Snacks List {% endblock %}
+{%block name%}Main Page{%endblock%}
+    {% block content %}
+        <h1>Snacks List :</h1>
+        <ul>
+            {% if snack_list %}
+            {% for snack in snack_list %}
+            <br>
+            <li><a href="{% url 'snack_detail' pk=snack.pk %}">{{ snack.name }} - {{snack.purchaser}}</a></li>
+            <br>    
+            {% endfor %}
+            {% else %}
+                <li>No snacks found</li>
+            {% endif %}
+        </ul>
+    {% endblock content%}
